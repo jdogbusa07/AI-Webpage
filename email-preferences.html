@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Email Preferences</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: #f8f9fa;
+            padding-top: 50px;
+        }
+        .form-check-label {
+            font-weight: 500;
+        }
+        .preferences-card {
+            max-width: 500px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card preferences-card shadow">
+            <div class="card-body">
+                <h3 class="card-title mb-4 text-center">Email Preferences</h3>
+                <form id="emailPreferencesForm">
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="criticalAlerts" checked>
+                        <label class="form-check-label" for="criticalAlerts">
+                            Critical alerts and notifications about your tax return
+                        </label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="specialOffers" checked>
+                        <label class="form-check-label" for="specialOffers">
+                            Information about special offers for tax services
+                        </label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="irsNotifications" checked>
+                        <label class="form-check-label" for="irsNotifications">
+                            Receive notifications of IRS changes and deadlines
+                        </label>
+                    </div>
+                    <div class="form-check mb-4">
+                        <input class="form-check-input" type="checkbox" id="newsletter" checked>
+                        <label class="form-check-label" for="newsletter">
+                            Learn from monthly tax newsletter with tax news and tips
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Save Preferences</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS CDN (optional, for some components) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Example: Prevent form submission and show a toast/alert
+        document.getElementById('emailPreferencesForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Your preferences have been saved!');
+        });
+    </script>
+</body>
+</html>
