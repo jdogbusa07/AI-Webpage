@@ -10,59 +10,241 @@
         body {
             background: #f8f9fa;
             padding-top: 50px;
+            background-image: url('https://masoncpapc.com/wp-content/uploads/2025/04/New-Project-68.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-width: 100vw;
+            min-height: 100vh;
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            overflow: auto;
+        }
+        html {
+            min-width: 100vw;
+            min-height: 100vh;
+            width: 100vw;
+            height: 100vh;
         }
         .form-check-label {
             font-weight: 500;
         }
         .preferences-card {
             max-width: 500px;
-            margin: auto;
+            margin: 2rem auto;
+            border: 2px solid #D2042D; /* Cherry red by default */
+            background: rgba(255,255,255,0.97);
+        }
+        /* Border for toggle dark mode button container */
+        .toggle-darkmode-border {
+            border: 2px solid #D2042D; /* Cherry red by default */
+            border-radius: 0.5rem;
+            display: inline-block;
+            padding: 1.2rem 2.5rem 1.2rem 2.5rem;
+            background: rgba(255,255,255,0.97);
+        }
+        /* Blood red checkboxes */
+        .form-check-input:checked {
+            background-color: #880808;
+            border-color: #880808;
+        }
+        .form-check-input {
+            border-color: #880808;
+        }
+        /* Dark grey legend */
+        legend {
+            color: #333333 !important;
+        }
+        /* Dark grey Save button */
+        .btn-primary {
+            background-color: #333333 !important;
+            border-color: #333333 !important;
+        }
+        .btn-primary:hover, .btn-primary:focus {
+            background-color: #222 !important;
+            border-color: #222 !important;
+        }
+
+        /* --- DARK MODE --- */
+        body.dark-mode {
+            background: #181a1b !important;
+            color: #f1f1f1;
+            background-image: url('https://miro.medium.com/0*cohct-vxHTF-OoeY.jpg') !important;
+            background-size: cover !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+        }
+        .dark-mode .card {
+            background: #23272b;
+            color: #f1f1f1;
+            border-color: #00c7cc !important; /* Turquoise border */
+        }
+        .dark-mode legend,
+        .dark-mode .card-title {
+            color: #f1f1f1 !important;
+        }
+        .dark-mode .form-check-label {
+            color: #f1f1f1;
+        }
+        .dark-mode .btn-primary {
+            background-color: #f1f1f1 !important;
+            color: #333333 !important;
+            border-color: #f1f1f1 !important;
+        }
+        .dark-mode .btn-primary:hover, .dark-mode .btn-primary:focus {
+            background-color: #cccccc !important;
+            color: #222 !important;
+            border-color: #cccccc !important;
+        }
+        .dark-mode .form-check-input:checked {
+            background-color: #880808;
+            border-color: #880808;
+        }
+        .dark-mode .form-check-input {
+            border-color: #880808;
+            background-color: #23272b;
+        }
+        .dark-mode hr {
+            border-color: #444;
+        }
+        .dark-mode .toggle-darkmode-border {
+            border-color: #00c7cc !important; /* Turquoise border */
+            background: #23272b;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            body, html {
+                min-width: 100vw;
+                min-height: 100vh;
+                width: 100vw;
+                height: 100vh;
+            }
+            .preferences-card {
+                max-width: 98vw;
+                margin: 1rem auto;
+                padding: 0.5rem;
+            }
+            .toggle-darkmode-border {
+                padding: 0.7rem 0.5rem 0.7rem 0.5rem;
+                width: 95vw;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid p-0">
         <div class="card preferences-card shadow">
             <div class="card-body">
                 <h3 class="card-title mb-4 text-center">Email Preferences</h3>
-                <form id="emailPreferencesForm">
-                    <div class="form-check mb-3">
-                        <input class="form-check-input" type="checkbox" id="criticalAlerts" checked>
-                        <label class="form-check-label" for="criticalAlerts">
-                            Critical alerts and notifications about your tax return
-                        </label>
+                <form id="emailPreferencesForm" action="https://www.w3schools.com/action_page.php" method="post">
+                    <fieldset class="border rounded-3 p-3 mb-4">
+                        <legend class="float-none w-auto px-2 mb-3 fs-6 fw-bold">Manage your preferences</legend>
+                        <div class="form-check mb-3 ps-4">
+                            <input class="form-check-input" type="checkbox" id="criticalAlerts" name="criticalAlerts" checked>
+                            <label class="form-check-label" for="criticalAlerts">
+                                Critical alerts and notifications about your tax return
+                            </label>
+                        </div>
+                        <div class="form-check mb-3 ps-4">
+                            <input class="form-check-input" type="checkbox" id="specialOffers" name="specialOffers" checked>
+                            <label class="form-check-label" for="specialOffers">
+                                Information about special offers for tax services
+                            </label>
+                        </div>
+                        <div class="form-check mb-3 ps-4">
+                            <input class="form-check-input" type="checkbox" id="irsNotifications" name="irsNotifications" checked>
+                            <label class="form-check-label" for="irsNotifications">
+                                Receive notifications of IRS changes and deadlines
+                            </label>
+                        </div>
+                        <div class="form-check mb-4 ps-4">
+                            <input class="form-check-input" type="checkbox" id="newsletter" name="newsletter" checked>
+                            <label class="form-check-label" for="newsletter">
+                                Learn from monthly tax newsletter with tax news and tips
+                            </label>
+                        </div>
+                        <hr>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="selectAll" />
+                            <label class="form-check-label fw-bold" for="selectAll">
+                                Select/Deselect All
+                            </label>
+                        </div>
+                    </fieldset>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg">Save</button>
                     </div>
-                    <div class="form-check mb-3">
-                        <input class="form-check-input" type="checkbox" id="specialOffers" checked>
-                        <label class="form-check-label" for="specialOffers">
-                            Information about special offers for tax services
-                        </label>
-                    </div>
-                    <div class="form-check mb-3">
-                        <input class="form-check-input" type="checkbox" id="irsNotifications" checked>
-                        <label class="form-check-label" for="irsNotifications">
-                            Receive notifications of IRS changes and deadlines
-                        </label>
-                    </div>
-                    <div class="form-check mb-4">
-                        <input class="form-check-input" type="checkbox" id="newsletter" checked>
-                        <label class="form-check-label" for="newsletter">
-                            Learn from monthly tax newsletter with tax news and tips
-                        </label>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100">Save Preferences</button>
                 </form>
             </div>
+        </div>
+        <div class="text-center mt-5" style="margin-top: 2.5rem !important;">
+            <span class="toggle-darkmode-border">
+                <button id="toggleDarkMode" class="btn btn-dark btn-sm text-uppercase px-4 py-2" style="letter-spacing: 1px;">
+                    TOGGLE DARK MODE
+                </button>
+            </span>
         </div>
     </div>
     <!-- Bootstrap JS CDN (optional, for some components) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Example: Prevent form submission and show a toast/alert
-        document.getElementById('emailPreferencesForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Your preferences have been saved!');
+        // Select/Deselect All functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const selectAll = document.getElementById('selectAll');
+            const checkboxes = Array.from(document.querySelectorAll('#emailPreferencesForm .form-check-input'))
+                .filter(cb => cb.id !== 'selectAll');
+
+            selectAll.addEventListener('change', function () {
+                checkboxes.forEach(cb => cb.checked = selectAll.checked);
+            });
+
+            // Update "Select All" if any box is unchecked/checked
+            checkboxes.forEach(cb => {
+                cb.addEventListener('change', function () {
+                    selectAll.checked = checkboxes.every(box => box.checked);
+                });
+            });
+
+            // Initialize "Select All" state
+            selectAll.checked = checkboxes.every(box => box.checked);
+
+            // Dark mode toggle and button inversion
+            const toggleBtn = document.getElementById('toggleDarkMode');
+            function updateToggleBtn() {
+                const borderBox = document.querySelector('.toggle-darkmode-border');
+                const card = document.querySelector('.preferences-card');
+                if (document.body.classList.contains('dark-mode')) {
+                    toggleBtn.classList.remove('btn-dark');
+                    toggleBtn.classList.add('btn-light');
+                    toggleBtn.classList.add('text-dark');
+                    toggleBtn.classList.remove('text-light');
+                    if (borderBox) borderBox.style.borderColor = '#00c7cc';
+                    if (card) card.style.borderColor = '#00c7cc';
+                } else {
+                    toggleBtn.classList.remove('btn-light');
+                    toggleBtn.classList.remove('text-dark');
+                    toggleBtn.classList.add('btn-dark');
+                    toggleBtn.classList.add('text-light');
+                    if (borderBox) borderBox.style.borderColor = '#D2042D';
+                    if (card) card.style.borderColor = '#D2042D';
+                }
+            }
+            toggleBtn.addEventListener('click', function () {
+                document.body.classList.toggle('dark-mode');
+                updateToggleBtn();
+            });
+            updateToggleBtn();
         });
     </script>
+    <footer>
+        <div style="width:100vw; text-align:center; position:fixed; left:0; bottom:0; z-index:9999; font-size:10pt; color:#fff; background:rgba(0,0,0,0.4); padding:0.5rem 0;">
+            Photo 1: <a href="https://masoncpapc.com/tax-planning-in-billings-mt" target="_blank" style="color:#fff; text-decoration:underline;">https://masoncpapc.com/tax-planning-in-billings-mt</a> &nbsp;|&nbsp;
+            Photo 2: <a href="https://medium.com/@adm.moneymastery/a-world-without-taxes-a-utopian-dream-or-a-financial-nightmare-4c15ccd90513" target="_blank" style="color:#fff; text-decoration:underline;">https://medium.com/@adm.moneymastery/a-world-without-taxes-a-utopian-dream-or-a-financial-nightmare-4c15ccd90513</a>
+            <br>
+            Both photos are licensed under Creative Commons.
+        </div>
+    </footer>
 </body>
 </html>
